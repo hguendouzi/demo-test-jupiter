@@ -26,6 +26,6 @@ test_job:
   inherit:
     default: true
     variables: true
-  stage:test
+  stage: test
   script:
     - mvn test
