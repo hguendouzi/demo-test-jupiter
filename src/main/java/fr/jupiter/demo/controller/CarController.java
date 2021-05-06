@@ -24,24 +24,23 @@ public class CarController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<HttpStatus> saveCar(@RequestBody Car car ){
-        service.saveCar(car);
-        return ResponseEntity.ok(HttpStatus.OK);
+    public @ResponseBody Car saveCar(@RequestBody Car car ){
+        return  service.saveCar(car);
     }
 
      @GetMapping("/{name}")
-    public Car findCarByName(@PathVariable String name){
+    public @ResponseBody Car findCarByName(@PathVariable String name){
         return  service.findCarByName(name);
     }
 
     @GetMapping("/brand/{brand}")
-    public List<Car> findCarByBrand(@PathVariable String brand){
+    public @ResponseBody List<Car> findCarByBrand(@PathVariable String brand){
         return service.findCarsByBrand(brand);
     }
 
 
     @DeleteMapping("/delete/{name}")
-    public ResponseEntity<HttpStatus> deleteByName(@PathVariable String name){
+    public @ResponseBody ResponseEntity<HttpStatus> deleteByName(@PathVariable String name){
         service.deleteByName(name);
         return ResponseEntity.ok(HttpStatus.OK);
     }

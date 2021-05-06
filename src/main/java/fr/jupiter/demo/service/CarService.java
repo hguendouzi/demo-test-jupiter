@@ -17,8 +17,8 @@ public class CarService {
      * save a car
      * @param car
      */
-    public void saveCar(Car car ){
-        repository.save(car);
+    public Car saveCar(Car car ){
+        return repository.save(car);
     }
 
     /**
